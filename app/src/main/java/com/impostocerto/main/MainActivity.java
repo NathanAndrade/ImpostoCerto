@@ -3,19 +3,27 @@ package com.impostocerto.main;
 /**
  * Created by nathand on 05/05/2015.
  */
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
-import com.impostocerto.adapter.MainAdapter;
+import com.impostocerto.login.LoginActivity;
 import com.impostocerto.login.R;
+import com.impostocerto.statistics.StatisticsFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -34,67 +42,149 @@ public class MainActivity extends ActionBarActivity {
     int PROFILE = R.drawable.aka;
 
     private Toolbar toolbar;                              // Declaring the Toolbar Object
+    private DrawerLayout mDrawerLayout;
+    private View mDrawerContent;
+    private ListView mDrawerList;
+    private ListView mDrawerBottomList;
+    private ActionBarDrawerToggle mDrawerToggle;
+    List<DrawerItem> dataList;
+    List<DrawerItem> dataBottomList;
+    private CharSequence mTitle;
 
-    RecyclerView mRecyclerView;                           // Declaring RecyclerView
-    RecyclerView.Adapter mAdapter;                        // Declaring Adapter For Recycler View
-    RecyclerView.LayoutManager mLayoutManager;            // Declaring Layout Manager as a linear layout manager
-    DrawerLayout Drawer;                                  // Declaring DrawerLayout
-
-    ActionBarDrawerToggle mDrawerToggle;                  // Declaring Action Bar Drawer Toggle
-
-
-
+    CustomDrawerAdapter adapter;
+    CustomDrawerAdapter bottomListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    /* Assinging the toolbar object ot the view
-    and setting the the Action bar to our toolbar
-     */
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        toolbar.setTitle(R.string.closeDrawer);
         setSupportActionBar(toolbar);
 
+        // Initializing
+        dataList = new ArrayList<DrawerItem>();
+        dataBottomList = new ArrayList<DrawerItem>();
 
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.DrawerLayout);
+        mDrawerContent = (View) findViewById(R.id.drawer_content_layout);
+        mDrawerList = (ListView) findViewById(R.id.option_items);
+        mDrawerBottomList = (ListView) findViewById(R.id.button_option_items);
 
+        loadDrawer();
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView); // Assigning the RecyclerView Object to the xml View
+        loadUserInfo();
 
-        mRecyclerView.setHasFixedSize(true);                            // Letting the system know that the list objects are of fixed size
+        if (savedInstanceState == null) {
+            SelectItem(0);
+        }
 
-        mAdapter = new MainAdapter(TITLES,ICONS,NAME,EMAIL,PROFILE);       // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
-        // And passing the titles,icons,header view name, header view email,
-        // and header view profile picture
-
-        mRecyclerView.setAdapter(mAdapter);                              // Setting the adapter to RecyclerView
-
-        mLayoutManager = new LinearLayoutManager(this);                 // Creating a layout Manager
-
-        mRecyclerView.setLayoutManager(mLayoutManager);                 // Setting the layout Manager
-
-
-        Drawer = (DrawerLayout) findViewById(R.id.DrawerLayout);        // Drawer object Assigned to the view
-        mDrawerToggle = new ActionBarDrawerToggle(this,Drawer,toolbar,R.string.openDrawer,R.string.closeDrawer){
-
-            @Override
-            public void onDrawerOpened(View drawerView) {
-                super.onDrawerOpened(drawerView);
-                // code here will execute once the drawer is opened( As I dont want anything happened whe drawer is
-                // open I am not going to put anything here)
-            }
-
-            @Override
-            public void onDrawerClosed(View drawerView) {
-                super.onDrawerClosed(drawerView);
-                // Code here will execute once drawer is closed
-            }
-
-
-
-        }; // Drawer Toggle Object Made
-        Drawer.setDrawerListener(mDrawerToggle); // Drawer Listener set to the Drawer toggle
-        mDrawerToggle.syncState();               // Finally we set the drawer toggle sync State
+        mDrawerToggle.syncState(); // Finally we set the drawer toggle sync
+        // State
 
     }
+
+    private void loadDrawer() {
+        mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
+
+        // Add Drawer Item to dataList
+        dataList.add(new DrawerItem(OptionsBarItem.USER.id, OptionsBarItem.USER.getTitle(this),
+                R.drawable.ic_home));
+
+        dataBottomList.add(new DrawerItem(OptionsBarItem.LOGOUT.id, OptionsBarItem.LOGOUT
+                .getTitle(this), R.drawable.logout));
+
+        adapter = new CustomDrawerAdapter(this, R.layout.drawer_item, dataList);
+
+        mDrawerList.setAdapter(adapter);
+
+        bottomListAdapter = new CustomDrawerAdapter(this, R.layout.drawer_item,
+                dataBottomList);
+
+        mDrawerBottomList.setAdapter(bottomListAdapter);
+
+        mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                SelectItem(position);
+            }
+        });
+        mDrawerBottomList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                SelectItem(position);
+            }
+        });
+
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
+                R.string.openDrawer, R.string.closeDrawer) {
+            public void onDrawerClosed(View view) {
+                toolbar.setTitle(mTitle);
+                invalidateOptionsMenu(); // creates call to
+                // onPrepareOptionsMenu()
+            }
+
+            public void onDrawerOpened(View drawerView) {
+                invalidateOptionsMenu(); // creates call to
+                // onPrepareOptionsMenu()
+            }
+        };
+    }
+
+    private void loadUserInfo() {
+    }
+
+    public void SelectItem(int position) {
+        if (mDrawerList != null) {
+            mDrawerList.setItemChecked(position, true);
+        }
+
+        // Handle
+        final DrawerItem item = dataList.get(position);
+        onSelectDrawerItem(item);
+
+    }
+
+    private void onSelectDrawerItem(final DrawerItem item) {
+        Fragment fragment = null;
+        Bundle args = new Bundle();
+        final Integer imgResID = item.getImgResID();
+        final String itemName = item.getItemName();
+        final int id = item.getId();
+        if (id == OptionsBarItem.USER.id) {
+            fragment = showStatistics();
+        } else if (id == OptionsBarItem.LOGOUT.id) {
+            logout();
+            return;
+        }
+        if (fragment == null) {
+            return;
+        }
+
+        fragment.setArguments(args);
+        FragmentManager frgManager = getFragmentManager();
+        frgManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+
+        mTitle = itemName;
+        mDrawerLayout.closeDrawers();
+    }
+
+    private StatisticsFragment showStatistics() {
+        StatisticsFragment fragment = new StatisticsFragment();
+        return fragment;
+    }
+
+    public void logout(){
+        SharedPreferences sharedpreferences = getSharedPreferences
+                (LoginActivity.MyPREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.clear();
+        editor.commit();
+        moveTaskToBack(true);
+        MainActivity.this.finish();
+        Intent intent = new Intent(this,LoginActivity.class);
+        startActivity(intent);
+    }
+
 }

@@ -3,6 +3,8 @@
     <string name="facebook_app_id">1586177061636807</string>
     <string name="openDrawer">Imposto Certo</string>
     <string name="closeDrawer">Home</string>
+    <string name="logout">Logout</string>
+    <string name="save">Salvar</string>
 
     <string name="register_title">Preencha os dados abaixo</string>
     <string name="register">Registrar Usuário</string>
