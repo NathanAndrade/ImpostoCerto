@@ -1,32 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
-    <!-- NEW VERSION COLORS -->
+
     <color name="white">#ffffff</color>
     <color name="gray">#757575</color>
     <color name="black">#212121</color>
-    <color name="orange_primary">#F9B100</color>
-    <color name="orange_second">#F78F17</color>
-    <color name="orange_dark">#c88f2b</color>
-    <color name="green">#8CC63E</color>
-    
-    <color name="orange">#F8971D</color>
-    <color name="light_gray">#909090</color>
-    <color name="darkgray">#131213</color>
-    <color name="blue">#31ABDB</color>
-    <color name="red">#D12F2F</color>
-    <color name="transparent_gray">#B3131213</color>
-    <color name="transparent_black">#B3000000</color>
-    
-    <!-- SPECIFIC COLORS -->
-    <color name="orange_text">#F9B100</color>
-    <color name="orange_titletext">#F49714</color>
+    <color name="blue_primary">#2DA9FF</color>
+    <color name="blue_second">#2487cc</color>
+    <color name="blue_dark">#1C3752</color>
 
-    <!-- MAIN DRAWER COLORS -->
-    <color name="drawer_user_info_text">@color/orange_text</color>
-    <color name="drawer_option_text">@color/orange_text</color>
-    
-    <!-- Final screen backgrounds -->
-    <color name="green_success">#8CC63E</color>
-	<color name="red_fail">#D12F2F</color>
 </resources>

@@ -24,14 +24,14 @@ public class MainActivity extends ActionBarActivity {
     //This Icons And Titles Are holded in an Array as you can see
 
     String TITLES[] = {"Home"};
-    int ICONS[] = {R.mipmap.ic_home};
+    int ICONS[] = {R.drawable.ic_home};
 
     //Similarly we Create a String Resource for the name and email in the header view
     //And we also create a int resource for profile picture in the header view
 
     String NAME = "Akash Bangad";
     String EMAIL = "akash.bangad@android4devs.com";
-    int PROFILE = R.mipmap.aka;
+    int PROFILE = R.drawable.aka;
 
     private Toolbar toolbar;                              // Declaring the Toolbar Object
 

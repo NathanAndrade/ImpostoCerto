@@ -4,4 +4,9 @@
     <string name="openDrawer">Imposto Certo</string>
     <string name="closeDrawer">Home</string>
 
+    <string name="register_title">Preencha os dados abaixo</string>
+    <string name="register">Registrar Usuário</string>
+    <string name="name">Nome</string>
+    <string name="cep">CEP</string>
+
 </resources>

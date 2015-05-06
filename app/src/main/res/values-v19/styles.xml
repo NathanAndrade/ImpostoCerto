@@ -3,6 +3,9 @@
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar" >
         <item name="android:windowTranslucentStatus">false</item>
+        <item name="colorPrimary">@color/blue_primary</item>
+        <item name="colorPrimaryDark">@color/blue_second</item>
+        <item name="android:textColorPrimary">@color/white</item>
     </style>
 
 </resources>
