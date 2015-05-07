@@ -148,9 +148,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             SharedPreferences.Editor editor = sharedpreferences.edit();
             editor.putString(name,email);
             editor.putString(pass,password);
-            editor.commit();
-            Intent i = new Intent(this,MainActivity.class);
-            startActivity(i);
+            if (editor.commit()) {
+                Intent i = new Intent(this, MainActivity.class);
+                startActivity(i);
+            }
         }
     }
 

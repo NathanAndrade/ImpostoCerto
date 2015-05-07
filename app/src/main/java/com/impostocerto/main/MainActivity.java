@@ -28,19 +28,6 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 
-    //First We Declare Titles And Icons For Our Navigation Drawer List View
-    //This Icons And Titles Are holded in an Array as you can see
-
-    String TITLES[] = {"Home"};
-    int ICONS[] = {R.drawable.ic_home};
-
-    //Similarly we Create a String Resource for the name and email in the header view
-    //And we also create a int resource for profile picture in the header view
-
-    String NAME = "Akash Bangad";
-    String EMAIL = "akash.bangad@android4devs.com";
-    int PROFILE = R.drawable.aka;
-
     private Toolbar toolbar;                              // Declaring the Toolbar Object
     private DrawerLayout mDrawerLayout;
     private View mDrawerContent;
@@ -113,11 +100,11 @@ public class MainActivity extends ActionBarActivity {
         mDrawerBottomList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                SelectItem(position);
+                SelectBottomItem(position);
             }
         });
 
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,
                 R.string.openDrawer, R.string.closeDrawer) {
             public void onDrawerClosed(View view) {
                 toolbar.setTitle(mTitle);
@@ -130,6 +117,9 @@ public class MainActivity extends ActionBarActivity {
                 // onPrepareOptionsMenu()
             }
         };
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
     }
 
     private void loadUserInfo() {
@@ -139,11 +129,18 @@ public class MainActivity extends ActionBarActivity {
         if (mDrawerList != null) {
             mDrawerList.setItemChecked(position, true);
         }
-
         // Handle
         final DrawerItem item = dataList.get(position);
         onSelectDrawerItem(item);
+    }
 
+    private void SelectBottomItem(int position) {
+        if (mDrawerBottomList != null) {
+            mDrawerBottomList.setItemChecked(position, true);
+        }
+        // Handle
+        final DrawerItem item = dataBottomList.get(position);
+        onSelectDrawerItem(item);
     }
 
     private void onSelectDrawerItem(final DrawerItem item) {
@@ -180,11 +177,12 @@ public class MainActivity extends ActionBarActivity {
                 (LoginActivity.MyPREFERENCES, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.clear();
-        editor.commit();
-        moveTaskToBack(true);
-        MainActivity.this.finish();
-        Intent intent = new Intent(this,LoginActivity.class);
-        startActivity(intent);
+        if (editor.commit()) {
+            moveTaskToBack(true);
+            MainActivity.this.finish();
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        }
     }
 
 }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -25,22 +26,29 @@ public class RegisterActivity extends ActionBarActivity {
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         toolbar.setTitle(R.string.register);
         setSupportActionBar(toolbar);
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.btnSaveUser:
-                        Toast.makeText(getBaseContext(), "Salvar", Toast.LENGTH_LONG);
-                        return true;
-                }
-                return true;
-            }
-        });
-        // Inflate a menu to be displayed in the toolbar
-        toolbar.inflateMenu(R.menu.home_menu);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.home_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.btnSaveUser) {
+            Toast.makeText(getBaseContext(), "Salvar", Toast.LENGTH_LONG);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
