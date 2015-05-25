@@ -66,11 +66,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
-                        android:padding="5dp"
                         android:text="Ver Historico"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#0645AD"
-                        android:textStyle="italic" />
+                        android:textStyle="italic"
+                        android:paddingRight="10dp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp" />
 
                 </LinearLayout>
 

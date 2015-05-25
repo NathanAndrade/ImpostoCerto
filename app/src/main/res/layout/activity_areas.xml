@@ -10,204 +10,205 @@
         layout="@layout/tool_bar"></include>
 
     <TextView
+        android:id="@+id/desc_area"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Qual área deseja investir seu imposto?"
-        android:id="@+id/desc_area"
-        android:textColor="@android:color/black"
         android:gravity="center"
-        android:padding="5dp" />
+        android:padding="5dp"
+        android:text="Qual área deseja investir seu imposto?"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/black" />
 
-    <GridLayout
-        android:id="@+id/layout_areas"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="3"
-        android:columnCount="3"
-        android:rowCount="3">
+        android:layout_height="0dip"
+        android:orientation="horizontal"
+        android:layout_weight="1">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:orientation="vertical"
+            android:layout_gravity="center_horizontal|center_vertical"
             android:gravity="center"
-            android:layout_gravity="center_horizontal|center_vertical">
+            android:orientation="vertical"
+            android:layout_weight="1">
 
             <ImageButton
                 android:id="@+id/educacao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/educacao_icon"
-                android:background="@color/white" />
+                android:background="@color/white"
+                android:src="@drawable/educacao_icon" />
 
             <TextView
+                android:id="@+id/educacao_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:padding="5dp"
                 android:text="Educação"
-                android:id="@+id/educacao_text"
-                android:textStyle="bold"
-                android:padding="5dp" />
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:orientation="vertical"
+            android:layout_gravity="center_horizontal|center_vertical"
             android:gravity="center"
-            android:layout_gravity="center_horizontal|center_vertical">
+            android:orientation="vertical"
+            android:layout_weight="1">
 
             <ImageButton
                 android:id="@+id/saude"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/saude_icon"
-                android:background="@color/white" />
+                android:background="@color/white"
+                android:src="@drawable/saude_icon" />
 
             <TextView
+                android:id="@+id/saude_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:padding="5dp"
                 android:text="Saúde"
-                android:id="@+id/saude_text"
-                android:textStyle="bold"
-                android:padding="5dp" />
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:orientation="vertical"
+            android:layout_gravity="center_horizontal|center_vertical"
             android:gravity="center"
-            android:layout_gravity="center_horizontal|center_vertical">
+            android:orientation="vertical"
+            android:layout_weight="1">
 
             <ImageButton
                 android:id="@+id/saneamento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/saneamento_icon"
-                android:background="@color/white" />
+                android:background="@color/white"
+                android:src="@drawable/saneamento_icon" />
 
             <TextView
+                android:id="@+id/saneamento_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:padding="5dp"
                 android:text="Saneamento"
-                android:id="@+id/saneamento_text"
-                android:textStyle="bold"
-                android:padding="5dp" />
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:orientation="horizontal"
+        android:layout_weight="1">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal|center_vertical"
             android:gravity="center"
-            android:layout_gravity="center_horizontal|center_vertical">
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/seguranca"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/seguranca_icon"
-                android:background="@color/white" />
+                android:background="@color/white"
+                android:src="@drawable/seguranca_icon" />
 
             <TextView
+                android:id="@+id/seguranca_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:padding="5dp"
                 android:text="Segurança"
-                android:id="@+id/seguranca_text"
-                android:textStyle="bold"
-                android:padding="5dp" />
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal|center_vertical"
             android:gravity="center"
-            android:layout_gravity="center_horizontal|center_vertical">
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/transporte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/transporte_icon"
-                android:background="@color/white" />
+                android:background="@color/white"
+                android:src="@drawable/transporte_icon" />
 
             <TextView
+                android:id="@+id/transporte_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:padding="5dp"
                 android:text="Transporte"
-                android:id="@+id/transporte_text"
-                android:textStyle="bold"
-                android:padding="5dp" />
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal|center_vertical"
             android:gravity="center"
-            android:layout_gravity="center_horizontal|center_vertical">
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/urbanizacao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/urbanizacao_icon"
-                android:background="@color/white" />
+                android:background="@color/white"
+                android:src="@drawable/urbanizacao_icon" />
 
             <TextView
+                android:id="@+id/urbanizacao_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:padding="5dp"
                 android:text="Urbanização"
-                android:id="@+id/urbanizacao_text"
-                android:textStyle="bold"
-                android:padding="5dp" />
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnSpan="3"
             android:layout_columnWeight="1"
+            android:layout_gravity="center_horizontal|center_vertical"
             android:layout_rowWeight="1"
-            android:orientation="vertical"
             android:gravity="center"
-            android:layout_gravity="center_horizontal|center_vertical">
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/entretenimento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/entretenimento_icon"
-                android:background="@color/white" />
+                android:background="@color/white"
+                android:src="@drawable/entretenimento_icon" />
 
             <TextView
+                android:id="@+id/entretenimento_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:padding="5dp"
                 android:text="Entretenimento"
-                android:id="@+id/entretenimento_text"
-                android:textStyle="bold"
-                android:padding="5dp" />
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
-    </GridLayout>
+    </LinearLayout>
 </LinearLayout>
