@@ -45,7 +45,8 @@ public class RegisterActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.btnSaveUser) {
-            Toast.makeText(getBaseContext(), "Salvar", Toast.LENGTH_LONG);
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);

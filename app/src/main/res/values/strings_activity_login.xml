@@ -1,8 +1,12 @@
 <resources>
 
     <!-- Strings related to login -->
+    <string name="username">Usuario</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Senha</string>
+    <string name="prompt_password2">Senha (Repetir)</string>
+    <string name="cpf">CPF</string>
+    <string name="titulo">Título de Eleitor</string>
     <string name="action_sign_in">Entrar</string>
     <string name="action_register">Registrar</string>
 

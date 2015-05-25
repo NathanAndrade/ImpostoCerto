@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar"></include>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Qual área deseja investir seu imposto?"
+        android:id="@+id/desc_area"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:padding="5dp" />
+
+    <GridLayout
+        android:id="@+id/layout_areas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:columnCount="3"
+        android:rowCount="3">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal|center_vertical">
+
+            <ImageButton
+                android:id="@+id/educacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/educacao_icon"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Educação"
+                android:id="@+id/educacao_text"
+                android:textStyle="bold"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal|center_vertical">
+
+            <ImageButton
+                android:id="@+id/saude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/saude_icon"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Saúde"
+                android:id="@+id/saude_text"
+                android:textStyle="bold"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal|center_vertical">
+
+            <ImageButton
+                android:id="@+id/saneamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/saneamento_icon"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Saneamento"
+                android:id="@+id/saneamento_text"
+                android:textStyle="bold"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal|center_vertical">
+
+            <ImageButton
+                android:id="@+id/seguranca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/seguranca_icon"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Segurança"
+                android:id="@+id/seguranca_text"
+                android:textStyle="bold"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal|center_vertical">
+
+            <ImageButton
+                android:id="@+id/transporte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/transporte_icon"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Transporte"
+                android:id="@+id/transporte_text"
+                android:textStyle="bold"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal|center_vertical">
+
+            <ImageButton
+                android:id="@+id/urbanizacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/urbanizacao_icon"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Urbanização"
+                android:id="@+id/urbanizacao_text"
+                android:textStyle="bold"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="3"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal|center_vertical">
+
+            <ImageButton
+                android:id="@+id/entretenimento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/entretenimento_icon"
+                android:background="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Entretenimento"
+                android:id="@+id/entretenimento_text"
+                android:textStyle="bold"
+                android:padding="5dp" />
+        </LinearLayout>
+    </GridLayout>
+</LinearLayout>

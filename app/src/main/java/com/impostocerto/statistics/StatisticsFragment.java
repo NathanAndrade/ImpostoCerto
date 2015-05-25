@@ -3,6 +3,7 @@ package com.impostocerto.statistics;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 
+import com.impostocerto.areas.AreasActivity;
 import com.impostocerto.login.R;
 import com.melnykov.fab.FloatingActionButton;
 import com.melnykov.fab.ObservableScrollView;
@@ -30,7 +32,19 @@ public class StatisticsFragment extends Fragment {
         FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
         fab.attachToScrollView(stats_scrollView);
 
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callAreas();
+            }
+        });
+
         return view;
+    }
+
+    private void callAreas() {
+        Intent intent = new Intent(getActivity(), AreasActivity.class);
+        startActivity(intent);
     }
 
     @Override

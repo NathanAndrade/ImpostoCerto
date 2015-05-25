@@ -5,7 +5,7 @@ import android.content.Context;
 import com.impostocerto.login.R;
 
 public enum OptionsBarItem {
-    USER(0, R.string.closeDrawer), LOGOUT(99, R.string.logout), ;
+    USER(0, R.string.closeDrawer), PERFIL(1,R.string.profile), AJUDA(2, R.string.help),  LOGOUT(99, R.string.logout), ;
     
     public final int id;
     private final String title;

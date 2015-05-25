@@ -9,6 +9,45 @@
         layout="@layout/tool_bar">
     </include>
 
+    <EditText android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="@string/username"
+        android:inputType="textCapWords"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:paddingTop="16dp"
+        android:layout_margin="16dp"
+        android:textColor="@color/black"
+        />
+
+    <EditText android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="@string/prompt_password"
+        android:imeActionId="@+id/login"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:paddingTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/black"/>
+
+    <EditText android:id="@+id/password2"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="@string/prompt_password2"
+        android:imeActionId="@+id/login"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:paddingTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/black"/>
+
     <EditText android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -21,25 +60,31 @@
         android:textColor="@color/black"
         />
 
-    <AutoCompleteTextView android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:hint="@string/prompt_email"
-        android:inputType="textEmailAddress"
-        android:maxLines="1"
-        android:singleLine="true"
+    <EditText android:id="@+id/cpf" android:layout_width="match_parent"
+        android:layout_height="48dp" android:hint="@string/cpf"
+        android:imeOptions="actionUnspecified" android:inputType="number"
+        android:maxLines="1" android:singleLine="true"
         android:paddingTop="16dp"
         android:layout_marginBottom="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:textColor="@color/black"/>
 
-    <EditText android:id="@+id/password"
+    <EditText android:id="@+id/titulo" android:layout_width="match_parent"
+        android:layout_height="48dp" android:hint="@string/titulo"
+        android:imeOptions="actionUnspecified" android:inputType="number"
+        android:maxLines="1" android:singleLine="true"
+        android:paddingTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/black"/>
+
+    <AutoCompleteTextView android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:hint="@string/prompt_password"
-        android:imeActionId="@+id/login"
-        android:inputType="textPassword"
+        android:hint="@string/prompt_email"
+        android:inputType="textEmailAddress"
         android:maxLines="1"
         android:singleLine="true"
         android:paddingTop="16dp"
