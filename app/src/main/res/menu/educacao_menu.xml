@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_pre_escola"
+        app:showAsAction="ifRoom|withText"
+        android:title="Pré Escola"
+        android:visible="true"/>
+    <item
+        android:id="@+id/item_fundamental1"
+        app:showAsAction="ifRoom|withText"
+        android:title="Fundamental 1"
+        android:visible="true"/>
+    <item
+        android:id="@+id/item_fundamental2"
+        app:showAsAction="ifRoom|withText"
+        android:title="Fundamental 2"
+        android:visible="true"/>
+
+    <item
+        android:id="@+id/item_ensino_medio"
+        app:showAsAction="ifRoom|withText"
+        android:title="Ensino Médio"
+        android:visible="true"/>
+</menu>

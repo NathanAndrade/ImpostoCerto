@@ -10,6 +10,12 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:background">@color/blue_dark</item>
         <item name="android:textStyle">bold</item>
+
+        <item name="android:itemTextAppearance">@style/itemTextStyle.AppTheme</item>
+    </style>
+
+    <style name="itemTextStyle.AppTheme" parent="@android:style/TextAppearance.Widget.IconMenu.Item">
+        <item name="android:textColor">@color/blue_dark</item>
     </style>
 
 </resources>

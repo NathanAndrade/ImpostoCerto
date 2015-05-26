@@ -8,4 +8,12 @@
     <color name="blue_second">#2487cc</color>
     <color name="blue_dark">#1C3752</color>
 
+    <color name="color_educacao">#DF2D3C</color>
+    <color name="color_saude">#AA1F41</color>
+    <color name="color_saneamento">#E84823</color>
+    <color name="color_seguranca">#8B973F</color>
+    <color name="color_transporte">#D47E5E</color>
+    <color name="color_urbanizacao">#2E54E3</color>
+    <color name="color_entretenimento">#C03E33</color>
+
 </resources>

@@ -7,6 +7,8 @@
         <item name="android:colorPrimaryDark">@color/blue_second</item>
         <item name="android:textColorPrimary">@color/white</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+
+        <item name="android:itemTextAppearance">@style/itemTextStyle.AppTheme</item>
     </style>
 
     <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">

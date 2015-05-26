@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_transp_escolar"
+        app:showAsAction="ifRoom|withText"
+        android:title="Escolar"
+        android:visible="true"/>
+    <item
+        android:id="@+id/item_transp_publico"
+        app:showAsAction="ifRoom|withText"
+        android:title="Público"
+        android:visible="true"/>
+    <item
+        android:id="@+id/item_transp_deficiente"
+        app:showAsAction="ifRoom|withText"
+        android:title="Deficiente"
+        android:visible="true"/>
+
+</menu>

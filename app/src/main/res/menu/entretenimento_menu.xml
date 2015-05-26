@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_area_lazer"
+        app:showAsAction="ifRoom|withText"
+        android:title="Área de Lazer"
+        android:visible="true"/>
+    <item
+        android:id="@+id/item_centro_esportivo"
+        app:showAsAction="ifRoom|withText"
+        android:title="Centro Esportivo"
+        android:visible="true"/>
+    <item
+        android:id="@+id/item_centro_convivencia"
+        app:showAsAction="ifRoom|withText"
+        android:title="Centro de Convivência"
+        android:visible="true"/>
+
+</menu>

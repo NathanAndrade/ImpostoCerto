@@ -15,8 +15,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.impostocerto.login.LoginActivity"
-            android:label="@string/app_name"
-            android:windowSoftInputMode="adjustResize|stateVisible" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -25,14 +24,17 @@
         <activity
             android:name="com.impostocerto.login.RegisterActivity"
             android:label="@string/app_name"
-            android:windowSoftInputMode="adjustResize|stateVisible"
             android:parentActivityName=".LoginActivity">
         </activity>
         <activity
             android:name="com.impostocerto.areas.AreasActivity"
             android:label="@string/app_name"
-            android:windowSoftInputMode="adjustResize|stateVisible"
             android:parentActivityName="com.impostocerto.main.MainActivity">
+        </activity>
+        <activity
+            android:name="com.impostocerto.areas.ProjectActivity"
+            android:label="@string/app_name"
+            android:parentActivityName="com.impostocerto.areas.AreasActivity">
         </activity>
         <activity
             android:name="com.impostocerto.main.MainActivity"

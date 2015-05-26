@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Qual subárea deseja investir seu imposto?"
+        android:text="Em qual projeto você deseja votar?"
         android:id="@+id/desc_area"
         android:textColor="@android:color/black"
         android:gravity="center"
