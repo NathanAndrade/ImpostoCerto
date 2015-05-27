@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+<LinearLayout
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="@color/white">
 
     <include
@@ -9,19 +13,21 @@
         layout="@layout/tool_bar">
     </include>
 
-    <EditText android:id="@+id/username"
+    <AutoCompleteTextView android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:hint="@string/username"
-        android:inputType="textCapWords"
+        android:hint="@string/prompt_email"
+        android:inputType="textEmailAddress"
         android:maxLines="1"
         android:singleLine="true"
         android:paddingTop="16dp"
-        android:layout_margin="16dp"
-        android:textColor="@color/black"
-        />
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/black"/>
 
-    <EditText android:id="@+id/password"
+    <EditText android:id="@+id/reg_password"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:hint="@string/prompt_password"
@@ -35,7 +41,7 @@
         android:layout_marginEnd="16dp"
         android:textColor="@color/black"/>
 
-    <EditText android:id="@+id/password2"
+    <EditText android:id="@+id/reg_password2"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:hint="@string/prompt_password2"
@@ -48,7 +54,7 @@
         android:layout_marginEnd="16dp"
         android:textColor="@color/black"/>
 
-    <EditText android:id="@+id/name"
+    <EditText android:id="@+id/reg_name"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:hint="@string/name"
@@ -80,19 +86,6 @@
         android:layout_marginEnd="16dp"
         android:textColor="@color/black"/>
 
-    <AutoCompleteTextView android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:hint="@string/prompt_email"
-        android:inputType="textEmailAddress"
-        android:maxLines="1"
-        android:singleLine="true"
-        android:paddingTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:textColor="@color/black"/>
-
     <EditText android:id="@+id/cep" android:layout_width="match_parent"
         android:layout_height="48dp" android:hint="@string/cep"
         android:imeOptions="actionUnspecified" android:inputType="number"
@@ -104,3 +97,4 @@
         android:textColor="@color/black"/>
 
 </LinearLayout>
+    </ScrollView>

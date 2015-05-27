@@ -18,10 +18,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.impostocerto.areas.ProjectDetailsActivity;
 import com.impostocerto.login.LoginActivity;
 import com.impostocerto.login.R;
+import com.impostocerto.login.RegisterActivity;
 import com.impostocerto.statistics.StatisticsFragment;
 
 import java.util.ArrayList;
@@ -130,6 +132,11 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void loadUserInfo() {
+        final TextView userName = (TextView) mDrawerLayout.findViewById(R.id.user_name);
+        final TextView userEmail = (TextView) mDrawerLayout.findViewById(R.id.user_email);
+
+        userName.setText(getSharedPreferences(RegisterActivity.RegPREFERENCES, Context.MODE_PRIVATE).getString(RegisterActivity.rName, "Nathan").toString());
+        userEmail.setText(getSharedPreferences(RegisterActivity.RegPREFERENCES, Context.MODE_PRIVATE).getString(RegisterActivity.rEmail, "nathan@gmail").toString());
     }
 
     public void SelectItem(int position) {

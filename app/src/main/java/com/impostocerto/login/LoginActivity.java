@@ -27,6 +27,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import com.impostocerto.main.MainActivity;
 
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private View mProgressView;
     private View mLoginFormView;
 
-    public static final String MyPREFERENCES = "MyPrefs" ;
+    public static final String MyPREFERENCES = "MyPrefs";
     public static final String name = "nameKey";
     public static final String pass = "passwordKey";
     SharedPreferences sharedpreferences;
@@ -118,13 +119,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         boolean cancel = false;
         View focusView = null;
 
-        // Check for a valid password, if the user entered one.
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            mPasswordView.setError(getString(R.string.error_invalid_password));
-            focusView = mPasswordView;
-            cancel = true;
-        }
-
         // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {
             mEmailView.setError(getString(R.string.error_field_required));
@@ -134,7 +128,16 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             mEmailView.setError(getString(R.string.error_invalid_email));
             focusView = mEmailView;
             cancel = true;
+        }else if (TextUtils.isEmpty(password)) {
+            mPasswordView.setError(getString(R.string.error_field_required));
+            focusView = mPasswordView;
+            cancel = true;
+        } else if (!isPasswordValid(password)) {
+            mPasswordView.setError(getString(R.string.error_invalid_email));
+            focusView = mPasswordView;
+            cancel = true;
         }
+
 
         if (cancel) {
             // There was an error; don't attempt login and focus the first
@@ -146,8 +149,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             showProgress(true);
 
             SharedPreferences.Editor editor = sharedpreferences.edit();
-            editor.putString(name,email);
-            editor.putString(pass,password);
+            editor.putString(name, email);
+            editor.putString(pass, password);
             if (editor.commit()) {
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);
@@ -157,26 +160,29 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
     @Override
     protected void onResume() {
-        sharedpreferences=getSharedPreferences(MyPREFERENCES,
+        sharedpreferences = getSharedPreferences(MyPREFERENCES,
                 Context.MODE_PRIVATE);
-        if (sharedpreferences.contains(name))
-        {
-            if(sharedpreferences.contains(pass)){
-                Intent i = new Intent(this,MainActivity.class);
-                startActivity(i);
-            }
+        if (sharedpreferences.contains(name) && sharedpreferences.contains(pass)) {
+            Intent i = new Intent(this, MainActivity.class);
+            startActivity(i);
         }
         super.onResume();
     }
 
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
-        return email.contains("@");
+        String e = getSharedPreferences(RegisterActivity.RegPREFERENCES, Context.MODE_PRIVATE).getString(RegisterActivity.rEmail, "").toString();
+        if (!email.contains("@") || !email.equals(e))
+            return false;
+        else return true;
     }
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
-        return password.length() > 4;
+        String e = getSharedPreferences(RegisterActivity.RegPREFERENCES, Context.MODE_PRIVATE).getString(RegisterActivity.rPass, "").toString();
+        if (password.length() < 4 || !password.equals(e))
+            return false;
+        else return true;
     }
 
     /**

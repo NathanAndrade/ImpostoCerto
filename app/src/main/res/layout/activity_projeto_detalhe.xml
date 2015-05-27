@@ -26,8 +26,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="5dp"
-                android:text="Construção de Centro de Saúde no Parque Oziel"
+                android:paddingLeft="6dip"
+                android:paddingRight="6dip"
+                android:paddingBottom="6dip"
+                android:paddingTop="10dip"
+                android:text="Construção de Centro de Saúde \nno Parque Oziel"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/secondary_text_light" />
 
@@ -113,8 +116,7 @@
                 android:id="@+id/project_descricao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="5dip"
-                android:paddingTop="5dip"
+                android:padding="6dip"
                 android:text="Este projeto tem como objetivo principal construir um Centro de Saúde no Bairro Parque Oziel na Rua dos Alfeneiros.
                 \nComo consequencia disso, os moradores deste bairro poderão ralizar consultas mais rapidas e faceis, desafogando assim outros centros de saúde.
                 \nContamos com o seu voto para garantir que este projeto nao fique apenas no papel.

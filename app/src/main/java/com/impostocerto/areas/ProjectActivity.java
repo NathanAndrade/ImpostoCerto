@@ -30,7 +30,7 @@ public class ProjectActivity extends ActionBarActivity {
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
 
-        Bundle extras = getIntent().getExtras();
+        final Bundle extras = getIntent().getExtras();
         String title = "";
         String subtitle = "";
         if (extras != null) {
@@ -68,10 +68,16 @@ public class ProjectActivity extends ActionBarActivity {
 
         list_projetos.setAdapter(adapter);
 
+        final String finalTitle = title;
+        final String finalSubtitle = subtitle;
         list_projetos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getBaseContext(), ProjectDetailsActivity.class);
+                Intent intent = new Intent(ProjectActivity.this, ProjectDetailsActivity.class);
+                if (extras != null) {
+                    intent.putExtra("AREA", finalTitle);
+                    intent.putExtra("SUBAREA", finalSubtitle);
+                }
                 startActivity(intent);
             }
         });

@@ -17,6 +17,20 @@
         <LinearLayout android:id="@+id/email_login_form" android:layout_width="match_parent"
             android:layout_height="wrap_content" android:orientation="vertical">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Imposto Certo"
+                android:id="@+id/textView4"
+                android:layout_gravity="center_horizontal"
+                android:singleLine="true"
+                android:textColor="@android:color/secondary_text_light"
+                android:layout_marginTop="25dip"
+                android:textStyle="bold"
+                android:padding="6dip"
+                android:textSize="40sp" />
+
             <ImageView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -26,6 +40,15 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:padding="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Grupo Iterativos"
+                android:id="@+id/textView5"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@android:color/secondary_text_light" />
 
             <AutoCompleteTextView android:id="@+id/email" android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:hint="@string/prompt_email"

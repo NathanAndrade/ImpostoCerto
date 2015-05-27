@@ -91,7 +91,6 @@ public class StatisticsFragment extends Fragment {
         data.setHasLabels(true);
         data.setHasCenterCircle(true);
         data.setSlicesSpacing(2);
-        data.setCenterText1("(%)");
 
         chart.setPieChartData(data);
     }
