@@ -6,10 +6,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.impostocerto.login.R;
 
@@ -20,7 +23,6 @@ public class ProjectActivity extends ActionBarActivity {
 
     private Toolbar toolbar;                              // Declaring the Toolbar Object
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,54 +38,20 @@ public class ProjectActivity extends ActionBarActivity {
             subtitle = extras.getString("SUBAREA");
         }
 
-        String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
-                "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-                "Linux", "OS/2" };
-
-        if (title.equals("EducaÁ„o")) {
-            toolbar.setBackgroundColor(getResources().getColor(R.color.color_educacao));
-            Window window = getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(getResources().getColor(R.color.color_educacao));
-        }if (title.equals("Sa˙de")) {
-            toolbar.setBackgroundColor(getResources().getColor(R.color.color_saude));
-            Window window = getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(getResources().getColor(R.color.color_saude));
-        }
-        if (title.equals("Saneamento")){
-            toolbar.setBackgroundColor(getResources().getColor(R.color.color_saneamento));
-            Window window = getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(getResources().getColor(R.color.color_saneamento));
-        }if (title.equals("SeguranÁa")) {
-            toolbar.setBackgroundColor(getResources().getColor(R.color.color_seguranca));
-            Window window = getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(getResources().getColor(R.color.color_seguranca));
-        }if (title.equals("Transporte")) {
-            toolbar.setBackgroundColor(getResources().getColor(R.color.color_transporte));
-            Window window = getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(getResources().getColor(R.color.color_transporte));
-        }if (title.equals("UrbanizaÁ„o")) {
-            toolbar.setBackgroundColor(getResources().getColor(R.color.color_urbanizacao));
-            Window window = getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(getResources().getColor(R.color.color_urbanizacao));
-        }if (title.equals("Entretenimento")) {
-            toolbar.setBackgroundColor(getResources().getColor(R.color.color_entretenimento));
-            Window window = getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(getResources().getColor(R.color.color_entretenimento));
-        }
+        if (title.equals("Educa√ß√£o"))
+            tintActionBar(getResources().getColor(R.color.color_educacao), getResources().getColor(R.color.color_educacao));
+        if (title.equals("Sa√∫de"))
+            tintActionBar(getResources().getColor(R.color.color_saude), getResources().getColor(R.color.color_saude));
+        if (title.equals("Saneamento"))
+            tintActionBar(getResources().getColor(R.color.color_saneamento), getResources().getColor(R.color.color_saneamento));
+        if (title.equals("Seguran√ßa"))
+            tintActionBar(getResources().getColor(R.color.color_seguranca), getResources().getColor(R.color.color_seguranca));
+        if (title.equals("Transporte"))
+            tintActionBar(getResources().getColor(R.color.color_transporte), getResources().getColor(R.color.color_transporte));
+        if (title.equals("Urbaniza√ß√£o"))
+            tintActionBar(getResources().getColor(R.color.color_urbanizacao), getResources().getColor(R.color.color_urbanizacao));
+        if (title.equals("Entretenimento"))
+            tintActionBar(getResources().getColor(R.color.color_entretenimento), getResources().getColor(R.color.color_entretenimento));
 
         toolbar.setTitle(title);
         toolbar.setSubtitle(subtitle);
@@ -95,9 +63,27 @@ public class ProjectActivity extends ActionBarActivity {
 
         ListView list_projetos = (ListView) findViewById(R.id.list_subareas);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item_project, R.id.project_title, values);
+        String[] values = new String[] { "Constru√ß√£o de Centro de Sa√∫de no Parque Oziel" };
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,R.layout.list_item_project, R.id.project_title, values);
 
         list_projetos.setAdapter(adapter);
+
+        list_projetos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getBaseContext(), ProjectDetailsActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private void tintActionBar(int color_ab, int color_sb) {
+        toolbar.setBackgroundColor(color_ab);
+        Window window = getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.setStatusBarColor(color_sb);
     }
 
     @Override

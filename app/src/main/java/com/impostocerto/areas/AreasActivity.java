@@ -35,7 +35,7 @@ public class AreasActivity extends ActionBarActivity implements PopupMenu.OnMenu
     and setting the the Action bar to our toolbar
      */
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
-        toolbar.setTitle("Selecione uma ¡rea");
+        toolbar.setTitle("Selecione uma √Årea");
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -227,35 +227,35 @@ public class AreasActivity extends ActionBarActivity implements PopupMenu.OnMenu
         switch (item.getItemId()) {
             //EDUCACAO
             case R.id.item_pre_escola:
-                callProjectActivity("EducaÁ„o", "PrÈ Escola");
+                callProjectActivity("Educa√ß√£o", "Pr√© Escola");
                 return true;
             case R.id.item_fundamental1:
-                callProjectActivity("EducaÁ„o", "Ensino Fundamental 1");
+                callProjectActivity("Educa√ß√£o", "Ensino Fundamental 1");
                 return true;
             case R.id.item_fundamental2:
-                callProjectActivity("EducaÁ„o", "Ensino Fundamental 2");
+                callProjectActivity("Educa√ß√£o", "Ensino Fundamental 2");
                 return true;
             case R.id.item_ensino_medio:
-                callProjectActivity("EducaÁ„o", "Ensino MÈdio");
+                callProjectActivity("Educa√ß√£o", "Ensino M√©dio");
                 return true;
 
             //SAUDE
             case R.id.item_posto_saude:
-                callProjectActivity("Sa˙de", "Posto de Sa˙de");
+                callProjectActivity("Sa√∫de", "Posto de Sa√∫de");
                 return true;
             case R.id.item_pronto_socorro:
-                callProjectActivity("Sa˙de", "Pronto Socorro");
+                callProjectActivity("Sa√∫de", "Pronto Socorro");
                 return true;
             case R.id.item_ambulancia:
-                callProjectActivity("Sa˙de", "Ambul‚ncia");
+                callProjectActivity("Sa√∫de", "Ambul√¢ncia");
                 return true;
             case R.id.item_medicos:
-                callProjectActivity("Sa˙de", "MÈdicos");
+                callProjectActivity("Sa√∫de", "M√©dicos");
                 return true;
 
             //SANEAMENTO
             case R.id.item_agua:
-                callProjectActivity("Saneamento", "¡gua");
+                callProjectActivity("Saneamento", "√Ågua");
                 return true;
             case R.id.item_esgoto:
                 callProjectActivity("Saneamento", "Esgoto");
@@ -263,13 +263,13 @@ public class AreasActivity extends ActionBarActivity implements PopupMenu.OnMenu
 
             //SEGURANCA
             case R.id.item_ronda_escolar:
-                callProjectActivity("SeguranÁa", "Ronda Escolar");
+                callProjectActivity("Seguran√ßa", "Ronda Escolar");
                 return true;
             case R.id.item_base_movel:
-                callProjectActivity("SeguranÁa", "Base MÛvel");
+                callProjectActivity("Seguran√ßa", "Base M√≥vel");
                 return true;
             case R.id.item_base_fixa:
-                callProjectActivity("SeguranÁa", "Base Fixa");
+                callProjectActivity("Seguran√ßa", "Base Fixa");
                 return true;
 
             //TRANSPORTE
@@ -277,7 +277,7 @@ public class AreasActivity extends ActionBarActivity implements PopupMenu.OnMenu
                 callProjectActivity("Transporte", "Escolar");
                 return true;
             case R.id.item_transp_publico:
-                callProjectActivity("Transporte", "P˙blico");
+                callProjectActivity("Transporte", "P√∫blico");
                 return true;
             case R.id.item_transp_deficiente:
                 callProjectActivity("Transporte", "Deficiente");
@@ -285,10 +285,10 @@ public class AreasActivity extends ActionBarActivity implements PopupMenu.OnMenu
 
             //URBANIZACAO
             case R.id.item_ruas:
-                callProjectActivity("UrbanizaÁ„o", "Ruas");
+                callProjectActivity("Urbaniza√ß√£o", "Ruas");
                 return true;
             case R.id.item_pracas:
-                callProjectActivity("UrbanizaÁ„o", "PraÁas");
+                callProjectActivity("Urbaniza√ß√£o", "Pra√ßas");
                 return true;
 
             //ENTRETENIMENTO
@@ -299,7 +299,7 @@ public class AreasActivity extends ActionBarActivity implements PopupMenu.OnMenu
                 callProjectActivity("Entretenimento", "Centro Esportivo");
                 return true;
             case R.id.item_centro_convivencia:
-                callProjectActivity("Entretenimento", "Centro de ConvivÍncia");
+                callProjectActivity("Entretenimento", "Centro de Conviv√™ncia");
                 return true;
         }
         return false;

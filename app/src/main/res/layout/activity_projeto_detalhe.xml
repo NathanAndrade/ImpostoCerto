@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar"></include>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="6dip">
+
+            <TextView
+                android:id="@+id/desc_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Construção de Centro de Saúde no Parque Oziel"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/secondary_text_light" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="?android:attr/listPreferredItemHeightSmall">
+
+                <ImageView
+                    android:id="@+id/view"
+                    android:padding="5dip"
+                    android:layout_width="?android:attr/listPreferredItemHeightSmall"
+                    android:layout_height="?android:attr/listPreferredItemHeightSmall"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="6dp"
+                    android:src="@drawable/saude_icon" />
+
+                <TextView
+                    android:id="@+id/project_subarea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Subarea: Posto de Saúde"
+                    android:textSize="12sp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignLeft="@+id/project_area"
+                    android:layout_alignStart="@+id/project_area"
+                    android:layout_marginBottom="5dip" />
+
+                <TextView
+                    android:id="@+id/project_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_toRightOf="@id/view"
+                    android:text="Área: Saúde"
+                    android:textSize="16sp"
+                    android:layout_above="@+id/project_subarea"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="5dip" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="?android:attr/listPreferredItemHeightSmall">
+                <ImageView
+                    android:id="@+id/project_valor"
+                    android:padding="5dip"
+                    android:layout_width="?android:attr/listPreferredItemHeightSmall"
+                    android:layout_height="?android:attr/listPreferredItemHeightSmall"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="6dp"
+                    android:src="@drawable/cheap"
+                    android:tint="#FFBF00"/>
+
+                <TextView
+                    android:id="@+id/text_project_valor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dip"
+                    android:layout_toRightOf="@+id/project_valor"
+                    android:gravity="center_vertical"
+                    android:text="Investimento: R$ 450 Mil"
+                    android:textSize="16sp"
+                    android:layout_alignBottom="@+id/project_valor" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/project_descricao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dip"
+                android:paddingTop="5dip"
+                android:text="Este projeto tem como objetivo principal construir um Centro de Saúde no Bairro Parque Oziel na Rua dos Alfeneiros.
+                \nComo consequencia disso, os moradores deste bairro poderão ralizar consultas mais rapidas e faceis, desafogando assim outros centros de saúde.
+                \nContamos com o seu voto para garantir que este projeto nao fique apenas no papel.
+                \nObrigado"
+                android:textSize="16sp" />
+
+        </LinearLayout>/>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/vote_button"
+        style="@style/PrimaryButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Votar"
+        android:layout_margin="6dip" />
+</LinearLayout>

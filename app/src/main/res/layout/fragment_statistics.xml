@@ -123,14 +123,14 @@
                         android:layout_height="?android:attr/listPreferredItemHeight"
                         android:padding="5dip">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:id="@+id/view"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_alignParentBottom="true"
                             android:layout_alignParentTop="true"
                             android:layout_marginLeft="6dp"
-                            android:src="@color/color_entretenimento" />
+                            android:src="@drawable/saude_icon" />
 
                         <TextView
                             android:id="@+id/remaining_time"
@@ -160,13 +160,14 @@
                             android:layout_toStartOf="@+id/icon2"
                             android:ellipsize="end"
                             android:gravity="bottom"
-                            android:text="Construir Quadra"
+                            android:singleLine="true"
+                            android:text="Construção de Centro de Saúde no Parque Oziel"
                             android:textSize="16sp" />
 
                         <Button
                             android:id="@+id/icon2"
                             style="@style/PrimaryButton"
-                            android:layout_width="wrap_content"
+                            android:layout_width="50dip"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_alignParentRight="true"
@@ -174,9 +175,8 @@
                             android:layout_marginBottom="10dip"
                             android:layout_marginRight="6dip"
                             android:layout_marginTop="10dip"
-                            android:contentDescription="TODO"
                             android:src="@drawable/ic_launcher"
-                            android:text="Votar"
+                            android:text="Ver"
                             android:textSize="12sp" />
 
                     </RelativeLayout>

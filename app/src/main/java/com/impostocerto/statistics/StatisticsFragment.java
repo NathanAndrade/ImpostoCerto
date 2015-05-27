@@ -9,11 +9,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 
 import com.impostocerto.areas.AreasActivity;
+import com.impostocerto.areas.ProjectDetailsActivity;
 import com.impostocerto.login.R;
 import com.melnykov.fab.FloatingActionButton;
 import com.melnykov.fab.ObservableScrollView;
@@ -51,6 +53,15 @@ public class StatisticsFragment extends Fragment {
             }
         });
 
+        Button ver_projeto = (Button) view.findViewById(R.id.icon2);
+        ver_projeto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ProjectDetailsActivity.class);
+                startActivity(intent);
+            }
+        });
+
         chart = (PieChartView) view.findViewById(R.id.chart);
 
         generateData();
@@ -80,6 +91,7 @@ public class StatisticsFragment extends Fragment {
         data.setHasLabels(true);
         data.setHasCenterCircle(true);
         data.setSlicesSpacing(2);
+        data.setCenterText1("(%)");
 
         chart.setPieChartData(data);
     }

@@ -20,26 +20,30 @@
         android:id="@+id/remaining_time"
         android:layout_width="fill_parent"
         android:layout_height="26dip"
+        android:paddingTop="2dip"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_toRightOf="@id/icon"
         android:ellipsize="marquee"
         android:singleLine="true"
-        android:text="Remaining Time"
-        android:gravity="center_vertical"
+        android:text="Expira em 5 dias"
+        android:gravity="top"
         android:textSize="12sp" />
 
     <TextView
         android:id="@+id/project_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="2dip"
         android:layout_above="@id/remaining_time"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_alignWithParentIfMissing="true"
         android:layout_toRightOf="@id/icon"
-        android:gravity="center_vertical"
+        android:gravity="bottom"
         android:text="Titulo"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:ellipsize="end"
+        android:singleLine="true" />
 
 </RelativeLayout>

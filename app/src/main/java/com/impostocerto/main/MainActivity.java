@@ -16,8 +16,10 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
+import com.impostocerto.areas.ProjectDetailsActivity;
 import com.impostocerto.login.LoginActivity;
 import com.impostocerto.login.R;
 import com.impostocerto.statistics.StatisticsFragment;
@@ -193,6 +195,6 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        finish();
+        moveTaskToBack(true);
     }
 }

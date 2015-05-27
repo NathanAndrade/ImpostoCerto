@@ -37,6 +37,11 @@
             android:parentActivityName="com.impostocerto.areas.AreasActivity">
         </activity>
         <activity
+            android:name="com.impostocerto.areas.ProjectDetailsActivity"
+            android:label="@string/app_name"
+            android:parentActivityName="com.impostocerto.areas.ProjectActivity">
+        </activity>
+        <activity
             android:name="com.impostocerto.main.MainActivity"
             android:configChanges="orientation|screenLayout"
             android:label="@string/app_name"
