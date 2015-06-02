@@ -7,10 +7,13 @@
     <string name="help">Ajuda</string>
     <string name="logout">Logout</string>
     <string name="save">Salvar</string>
+    <string name="validation_valid_field">válido</string>
+    <string name="validation_invalid_field">inválido</string>
+    <string name="validation_empty_field">vazio</string>
 
     <string name="register_title">Preencha os dados abaixo</string>
     <string name="register">Registrar Usuário</string>
-    <string name="name">Nome</string>
-    <string name="cep">CEP</string>
+    <string name="name">Nome*</string>
+    <string name="cep">CEP*</string>
 
 </resources>

@@ -82,10 +82,6 @@ public class MainActivity extends ActionBarActivity {
         // Add Drawer Item to dataList
         dataList.add(new DrawerItem(OptionsBarItem.USER.id, OptionsBarItem.USER.getTitle(this),
                 R.drawable.ic_home));
-        dataList.add(new DrawerItem(OptionsBarItem.PERFIL.id, OptionsBarItem.PERFIL.getTitle(this),
-                R.drawable.ic_home));
-        dataList.add(new DrawerItem(OptionsBarItem.AJUDA.id, OptionsBarItem.AJUDA.getTitle(this),
-                R.drawable.ic_home));
 
 
         dataBottomList.add(new DrawerItem(OptionsBarItem.LOGOUT.id, OptionsBarItem.LOGOUT

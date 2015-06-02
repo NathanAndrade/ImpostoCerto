@@ -25,13 +25,14 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:drawableLeft="@drawable/ic_email_black_24dp"/>
 
-    <EditText android:id="@+id/reg_password"
+    <EditText
+        android:id="@+id/reg_password"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:hint="@string/prompt_password"
-        android:imeActionId="@+id/login"
         android:inputType="textPassword"
         android:maxLines="1"
         android:singleLine="true"
@@ -39,20 +40,21 @@
         android:layout_marginBottom="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:drawableLeft="@drawable/ic_vpn_key_black_24dp"/>
 
     <EditText android:id="@+id/reg_password2"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:hint="@string/prompt_password2"
-        android:imeActionId="@+id/login"
         android:inputType="textPassword"
         android:maxLines="1"
         android:singleLine="true"
         android:paddingTop="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:drawableLeft="@drawable/ic_vpn_key_black_24dp"/>
 
     <EditText android:id="@+id/reg_name"
         android:layout_width="match_parent"
@@ -64,6 +66,7 @@
         android:paddingTop="16dp"
         android:layout_margin="16dp"
         android:textColor="@color/black"
+        android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
         />
 
     <EditText android:id="@+id/cpf" android:layout_width="match_parent"
@@ -74,7 +77,8 @@
         android:layout_marginBottom="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:drawableLeft="@drawable/ic_perm_identity_black_24dp"/>
 
     <EditText android:id="@+id/titulo" android:layout_width="match_parent"
         android:layout_height="48dp" android:hint="@string/titulo"
@@ -84,7 +88,8 @@
         android:layout_marginBottom="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:drawableLeft="@drawable/ic_perm_identity_black_24dp"/>
 
     <EditText android:id="@+id/cep" android:layout_width="match_parent"
         android:layout_height="48dp" android:hint="@string/cep"
@@ -94,7 +99,8 @@
         android:layout_marginBottom="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:drawableLeft="@drawable/ic_location_on_black_24dp"/>
 
 </LinearLayout>
     </ScrollView>

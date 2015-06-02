@@ -102,7 +102,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:padding="5dp"
-                        android:text="Alertas"
+                        android:text="Notificações"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="@android:color/secondary_text_light"
                         android:textStyle="bold" />
@@ -244,7 +244,7 @@
                                     android:layout_alignParentBottom="true"
                                     android:layout_alignParentTop="true"
                                     android:layout_marginLeft="6dp"
-                                    android:src="@color/color_entretenimento" />
+                                    android:src="@drawable/entretenimento_icon" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -271,7 +271,7 @@
                                     android:layout_alignParentBottom="true"
                                     android:layout_alignParentTop="true"
                                     android:layout_marginLeft="6dp"
-                                    android:src="@color/color_educacao" />
+                                    android:src="@drawable/educacao_icon" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -298,7 +298,7 @@
                                     android:layout_alignParentBottom="true"
                                     android:layout_alignParentTop="true"
                                     android:layout_marginLeft="6dp"
-                                    android:src="@color/color_saude" />
+                                    android:src="@drawable/saude_icon" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -325,7 +325,7 @@
                                     android:layout_alignParentBottom="true"
                                     android:layout_alignParentTop="true"
                                     android:layout_marginLeft="6dp"
-                                    android:src="@color/color_saneamento" />
+                                    android:src="@drawable/saneamento_icon" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -352,7 +352,7 @@
                                     android:layout_alignParentBottom="true"
                                     android:layout_alignParentTop="true"
                                     android:layout_marginLeft="6dp"
-                                    android:src="@color/color_seguranca" />
+                                    android:src="@drawable/seguranca_icon" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -379,7 +379,7 @@
                                     android:layout_alignParentBottom="true"
                                     android:layout_alignParentTop="true"
                                     android:layout_marginLeft="6dp"
-                                    android:src="@color/color_transporte" />
+                                    android:src="@drawable/transporte_icon" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -406,7 +406,7 @@
                                     android:layout_alignParentBottom="true"
                                     android:layout_alignParentTop="true"
                                     android:layout_marginLeft="6dp"
-                                    android:src="@color/color_urbanizacao" />
+                                    android:src="@drawable/urbanizacao_icon" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
